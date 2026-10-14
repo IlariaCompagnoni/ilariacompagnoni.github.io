@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Building Envelope — Unitised Curtain Wall | Ilaria Compagnoni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/highcharts@12.1.2/highcharts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@12.1.2/highcharts-more.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@12.1.2/modules/accessibility.js"></script>
+<style>
+:root{--bg:#f4f3f0;--card:#ffffff;--a:#0d9488;--ad:rgba(13,148,136,.10);--t:#1a2b33;--td:#5b6b73;--tb:#0f1e24;--br:#e2e0da;--f:'Inter',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--f);line-height:1.7;overflow-x:hidden}
+.wrap{max-width:960px;margin:0 auto;padding:48px 48px 80px}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--a);text-decoration:none;margin-bottom:40px;transition:gap .2s}
+.back:hover{gap:12px}
+.ph{font-size:13px;font-weight:600;color:var(--a);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+h1{font-size:40px;font-weight:800;color:var(--tb);line-height:1.12;letter-spacing:-1px;margin-bottom:16px}
+.sub{font-size:17px;color:var(--td);margin-bottom:24px;max-width:720px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.meta span{font-size:12px;font-weight:600;color:var(--a);background:var(--ad);padding:5px 12px;border-radius:12px}
+.ctx{font-size:13px;color:var(--td);margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid var(--br)}
+h2{font-size:24px;font-weight:700;color:var(--tb);margin:48px 0 16px;letter-spacing:-.3px}
+.partband{display:flex;align-items:center;gap:12px;margin:56px 0 8px;padding:14px 20px;background:var(--card);border:1px solid var(--br);border-left:3px solid var(--a);border-radius:8px}
+.partband .pi{font-size:22px}.partband .pt{font-size:19px;font-weight:700;color:var(--tb)}
+.partband .pl{font-size:12px;font-weight:600;color:var(--a);text-transform:uppercase;letter-spacing:.06em;margin-left:auto}
+h3{font-size:17px;font-weight:600;color:var(--a);margin:32px 0 10px}
+p{font-size:16px;color:var(--t);margin-bottom:16px}
+.lead{color:var(--td)}.hl{color:var(--a);font-weight:600}.hw{color:var(--tb);font-weight:600}
+figure{margin:24px 0 32px;background:var(--card);border:1px solid var(--br);border-radius:10px;padding:16px;overflow:hidden}
+figure img{width:100%;height:auto;border-radius:6px;display:block;background:#fff}
+figcaption{font-size:13px;color:var(--td);margin-top:12px;text-align:center;font-style:italic}
+.chartcard{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:20px 18px 12px;margin:24px 0 32px}
+.chartcard h4{font-size:14px;font-weight:600;color:var(--tb);margin:0 0 4px}
+.chartcard .cs{font-size:12px;color:var(--td);margin:0 0 12px}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:24px 0 32px}
+.kpi{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:22px;text-align:center}
+.kpi .n{font-size:26px;font-weight:800;color:var(--a);letter-spacing:-.5px}
+.kpi .l{font-size:12px;color:var(--td);margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0 32px}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+.strat{display:grid;grid-template-columns:1fr;gap:0;margin:20px 0 32px;background:var(--card);border:1px solid var(--br);border-radius:10px;overflow:hidden}
+.strat .row{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--br)}
+.strat .row:last-child{border-bottom:none}
+.strat .sw{width:26px;height:26px;border-radius:6px;flex:none}
+.strat .rt{font-size:14px;font-weight:600;color:var(--tb)}
+.strat .rd{font-size:12.5px;color:var(--td)}
+.note{font-size:13px;color:var(--td);background:var(--card);border:1px solid var(--br);border-left:3px solid var(--a);border-radius:8px;padding:12px 16px;margin:14px 0 24px}
+.vtbl{width:100%;border-collapse:collapse;margin:16px 0 10px;font-size:13.5px;background:var(--card);border:1px solid var(--br);border-radius:10px;overflow:hidden}
+.vtbl th,.vtbl td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--br)}
+.vtbl th{background:var(--ad);color:var(--tb);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.vtbl td:first-child{text-align:left;font-weight:600;color:var(--tb)}
+.vtbl tr:last-child td{border-bottom:none}
+.ok{color:#1a9d6b;font-weight:700}
+footer{text-align:center;padding:40px;font-size:12px;color:var(--td);border-top:1px solid var(--br)}
+@media(max-width:768px){.wrap{padding:32px 20px 60px}h1{font-size:30px}.partband{flex-wrap:wrap}.partband .pl{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../index.html">← Back to portfolio</a>
+<div class="ph">Course Project · Advanced Building Envelope Components Engineering</div>
+<h1>Unitised Curtain Wall — Dublin Office Tower</h1>
+<p class="sub">Full engineering design of a unitised curtain-wall façade for a 10-storey office building in Dublin: glazing selection, structural verification, thermal and condensation analysis, shading, acoustics, fire safety, maintenance and sustainability.</p>
+<div class="meta"><span>Polytechnic of Milan</span><span>A.Y. 2023/24</span><span>Metra Poliedra Sky-Fast 80</span><span>MEPLA</span><span>THERM</span></div>
+<div class="ctx">Prof. Ing. Rigone Paolo · Tutor Ing. Giussani Paolo · Group 02 — Cavigioli, Compagnoni, Meloni, Okada, Trabacca, Zhu</div>
+
+<div class="partband"><span class="pi">🏢</span><span class="pt">Part 1 — Architecture &amp; case study</span><span class="pl">Context</span></div>
+<h2>The building</h2>
+<p>A unitised curtain-wall system designed for an <span class="hl">office building in Dublin</span>, Ireland — ten storeys above ground plus two below, ~30 m tall. The volume combines two rectangles organised around functional and structural cores. The primary structure is composite: <span class="hw">HEA 260</span> columns and <span class="hw">IPE 300</span> beams working with RC walls for lateral stability, on a 20 cm metal-deck slab.</p>
+
+<figure><img src="img/cw-plan.png" alt="Typical floor plan"><figcaption>Typical floor plan (1:200)</figcaption></figure>
+
+<h2>Glazing selection</h2>
+<p>Using the AGC glass configurator, successive double-glazed trials (argon-filled) were optimised for thermal, visual and acoustic performance. A <span class="hl">low-e coating</span> on surface 3 dropped the transmittance from 2.6 to 1.3 W/m²K; a final increase in glass thickness, cavity depth and a new coating reached <span class="hw">U = 1.0 W/m²K</span>.</p>
+<div class="chartcard"><h4>Glazing U-value — design evolution</h4><p class="cs">Thermal transmittance reduced across the design trials (W/m²K).</p><div id="c_glazU" style="height:320px"></div></div>
+<div class="kpi-row">
+<div class="kpi"><div class="n">1.0</div><div class="l">U-value W/m²K</div></div>
+<div class="kpi"><div class="n">0.38</div><div class="l">Solar factor g</div></div>
+<div class="kpi"><div class="n">40.8 mm</div><div class="l">Total thickness</div></div>
+<div class="kpi"><div class="n">56 kg/m²</div><div class="l">Glazing weight</div></div>
+</div>
+
+<div class="partband"><span class="pi">⚙️</span><span class="pt">Part 2 — Engineering</span><span class="pl">Analysis</span></div>
+<h2>Mechanical analysis — actions vs limits</h2>
+<p>Loads were derived to Eurocode (dead, wind, snow, seismic, horizontal live). The governing combination is <span class="hl">wind suction + live load</span>. Frame actions on mullions and transoms were computed by hand and the frame–glass interface verified in <span class="hw">MEPLA</span> (FE for structural glass). All SLS and ULS checks pass with large margins.</p>
+<div class="chartcard"><h4>Façade design loads</h4><p class="cs">Characteristic values (kN/m² except seismic in kN). Wind shown as pressure; suction governs at −2.07 kN/m².</p><div id="c_loads" style="height:340px"></div></div>
+<div class="chartcard"><h4>SLS horizontal deflection — actual vs limit</h4><p class="cs">Maximum deflection f_max stays well under the allowable f_lim for every frame member (mm, log scale).</p><div id="c_defl" style="height:360px"></div></div>
+<div class="note">✅ Every member is verified with a wide safety margin — e.g. the mullion deflects just <b>3.09 mm</b> against an <b>18.33 mm</b> limit under wind, and all ULS stress checks pass.</div>
+
+<h2>Thermal analysis</h2>
+<p>Overall façade transmittance was built up from THERM 2-D joint models plus centre-of-component U-values, area-weighted per EN ISO 12631. The result comfortably beats the Irish requirement of U = 1.4 W/m²K.</p>
+<div class="two">
+<div class="chartcard"><h4>Component U-values (THERM)</h4><p class="cs">Centre and joint U-values of the fixed façade (W/m²K).</p><div id="c_therm" style="height:360px"></div></div>
+<div class="chartcard"><h4>Overall U_cw vs requirement</h4><p class="cs">Fixed and openable modules vs the 1.4 W/m²K limit.</p><div id="c_ucw" style="height:360px"></div></div>
+</div>
+
+<h3>Condensation risk</h3>
+<p>With interior air at 20 °C / 50% RH the dew point is <span class="hw">9.3 °C</span>. The minimum interior surface temperature of every thermal joint (from THERM) stays above it — <span class="hl">no condensation</span>.</p>
+<div class="chartcard"><h4>Minimum surface temperature vs dew point</h4><p class="cs">All seven joints sit above the 9.3 °C dew-point line (°C).</p><div id="c_cond" style="height:360px"></div></div>
+
+<h2>Shading, comfort &amp; systems</h2>
+<p>Solar control combines internal curtains with orientation-specific external devices: <span class="hl">vertical fins</span> on east/west and <span class="hl">horizontal overhangs</span> on north/south, assessed to EN 14501 for thermal (g_tot, q_i,tot) and visual comfort (glare, daylight, view).</p>
+<div class="strat">
+<div class="row"><div class="sw" style="background:#e8820a"></div><div><div class="rt">Fire protection</div><div class="rd">Curtain-wall class SC, EI 60 spandrel strip, Rockwool stone-wool firestop at each floor</div></div></div>
+<div class="row"><div class="sw" style="background:#2b6cb0"></div><div><div class="rt">Acoustics</div><div class="rd">Glazing R_w ≈ 46 dB; façade meets D2m,nT,w ≥ 42 dB for the office context</div></div></div>
+<div class="row"><div class="sw" style="background:#1a9d6b"></div><div><div class="rt">Maintenance (BMU)</div><div class="rd">Rostek Roca roof trolley + BMU2 cradle (building 39.8 m, just under the 40 m BMU threshold)</div></div></div>
+</div>
+<figure><img src="img/cw-d8-shading.png" alt="Vertical shading detail D8"><figcaption>D8 — vertical fin shading detail (aluminium extruded fin 500×100 mm on steel bracket)</figcaption></figure>
+
+<h2>Sustainability</h2>
+<p>The aluminium system (Metra RE.AL.E. recyclable alloy) and mineral-wool insulation support end-of-life recovery; the high-performance envelope cuts heating and cooling demand, while shading and daylight control reduce lighting energy and improve indoor environmental quality (thermal, visual, acoustic and air quality).</p>
+
+<div class="partband"><span class="pi">📐</span><span class="pt">Drawings &amp; construction details</span><span class="pl">Detailing</span></div>
+<p>The façade was fully detailed at 1:4 — twenty drawing tables covering plans, elevations, section and eight construction nodes (D1–D8). A selection:</p>
+<figure><img src="img/cw-section.png" alt="Building section"><figcaption>Transversal section a–a with detail call-outs D1–D7</figcaption></figure>
+<figure><img src="img/cw-elevation.png" alt="East elevation"><figcaption>East elevation (E2) — façade modularity across the 10 storeys</figcaption></figure>
+<figure><img src="img/cw-blowup.png" alt="Blow-up detail"><figcaption>Blow-up detail (1:20) — vertical sequence of nodes D1–D5 through the façade</figcaption></figure>
+<div class="two">
+<figure><img src="img/cw-d1-roof.png" alt="D1 roof node"><figcaption>D1 — roof node (1:4)</figcaption></figure>
+<figure><img src="img/cw-d7-openable.png" alt="D7 openable module"><figcaption>D7 — openable module (1:4)</figcaption></figure>
+</div>
+
+<footer>Built and designed by <span style="color:var(--a)">Ilaria Compagnoni</span>. All rights reserved © 2026</footer>
+</div>
+
+<script>
+(function(){
+var A='#0d9488',A2='#2bb0e0',WARM='#e8820a',BLUE='#2b6cb0',GREEN='#1a9d6b',RED='#d14e2b',TB='#0f1e24',TD='#5b6b73',BR='#e2e0da',CARD='#ffffff';
+var F="'Inter',system-ui,sans-serif";
+function base(x){return Object.assign({chart:{backgroundColor:'transparent',style:{fontFamily:F}},credits:{enabled:false},title:{text:null},legend:{itemStyle:{color:TD,fontWeight:'600',fontSize:'12px'}},xAxis:{labels:{style:{color:TD}},lineColor:BR,tickColor:BR},yAxis:{labels:{style:{color:TD}},gridLineColor:BR,title:{style:{color:TD}}},tooltip:{backgroundColor:CARD,borderColor:BR,style:{color:TB},shared:false}},x);}
+var DT={"glazing_U": {"labels": ["Trial 1\n(clear+PVB)", "Trial 2\n(low-e s3)", "Final\n(thicker+coating)"], "U": [2.6, 1.3, 1.0]}, "glazing_final": {"U": 1.0, "g": 0.38, "tau_vis": 0.74, "thickness_mm": 40.8, "weight": 56}, "sls_defl": {"elements": ["Mullion", "Transom 1", "Transom 2", "Transom 3"], "fmax": [3.09, 0.0341, 0.00406, 0.000648], "flim": [18.33, 7.5, 7.5, 7.5]}, "therm_fixed": {"components": ["Ceiling transom", "Sill transom", "Mullion glass joint", "Mullion panel joint", "Glazing centre", "Spandrel centre"], "U": [2.27, 2.27, 1.96, 3.54, 1.0, 0.24], "UA": [0.31, 0.31, 0.58, 0.23, 4.48, 0.21]}, "ucw": {"fixed": 0.98, "openable": 0.92, "limit": 1.4}, "condensation": {"joints": ["A: Sill transom", "B: Mullion glass", "C: Mullion panel", "D: Sill transom", "E: Opening sill", "F: Mullion panel", "G: Mullion glass"], "tmin": [10.2, 10.3, 11.7, 10.3, 10.2, 12.7, 10.2], "tdew": 9.3}, "acoustics": {"glass_Rw": 46, "facade_req": 42}, "loads": {"labels": ["Mullion DL", "Transom DL", "Glazing bar DL", "Glass DL", "Shading DL", "Wind (press)", "Snow", "Seismic", "Live (horiz)"], "values": [0.68, 0.04, 0.02, 0.01, 0.55, 0.07, 0.0, 0.05, 1.0], "wind_suction": -2.07}, "sls_vert": {"elements": ["Mullion", "Transom 1", "Transom 2", "Transom 3"], "fmax": [null, 0.0015, 0.006386, 0.189], "flim": [null, 3, 3, 3]}};
+
+Highcharts.chart('c_glazU', base({
+ xAxis:{categories:DT.glazing_U.labels},
+ yAxis:{title:{text:'U-value [W/m²K]'},plotLines:[{value:1.4,color:RED,width:1.5,dashStyle:'Dash',label:{text:'Irish limit 1.4',style:{color:RED,fontSize:'11px'}}}]},
+ series:[{name:'Glazing U',type:'column',color:A,data:DT.glazing_U.U,dataLabels:{enabled:true,format:'{y}',style:{color:TB}}}]
+}));
+
+Highcharts.chart('c_loads', base({
+ xAxis:{categories:DT.loads.labels,labels:{rotation:-40,style:{color:TD,fontSize:'10px'}}},
+ yAxis:{title:{text:'Load [kN/m² · seismic kN]'},plotLines:[{value:0,color:TD,width:1}]},
+ series:[{name:'Characteristic value',type:'column',color:A,data:DT.loads.values},
+         {name:'Wind suction',type:'column',color:WARM,data:[null,null,null,null,null,DT.loads.wind_suction,null,null,null]}]
+}));
+
+Highcharts.chart('c_defl', base({
+ xAxis:{categories:DT.sls_defl.elements},
+ yAxis:{type:'logarithmic',title:{text:'Deflection [mm] (log)'}},
+ series:[{name:'f_max (actual)',type:'column',color:A,data:DT.sls_defl.fmax},
+         {name:'f_lim (allowable)',type:'column',color:'#c9cfcc',data:DT.sls_defl.flim}]
+}));
+
+Highcharts.chart('c_therm', base({
+ xAxis:{categories:DT.therm_fixed.components,labels:{rotation:-40,style:{color:TD,fontSize:'10px'}}},
+ yAxis:{title:{text:'U-value [W/m²K]'}},
+ series:[{name:'Component U',type:'column',color:A,data:DT.therm_fixed.U,dataLabels:{enabled:true,format:'{y}',style:{color:TB,fontSize:'10px'}}}]
+}));
+
+Highcharts.chart('c_ucw', base({
+ xAxis:{categories:['Fixed module','Openable module']},
+ yAxis:{title:{text:'U_cw [W/m²K]'},plotLines:[{value:DT.ucw.limit,color:RED,width:1.5,dashStyle:'Dash',label:{text:'Limit 1.4',style:{color:RED,fontSize:'11px'}}}]},
+ series:[{name:'U_cw',type:'column',color:A,data:[DT.ucw.fixed,DT.ucw.openable],dataLabels:{enabled:true,format:'{y}',style:{color:TB}}}]
+}));
+
+Highcharts.chart('c_cond', base({
+ xAxis:{categories:DT.condensation.joints,labels:{rotation:-40,style:{color:TD,fontSize:'10px'}}},
+ yAxis:{title:{text:'Temperature [°C]'},plotLines:[{value:DT.condensation.tdew,color:RED,width:1.5,dashStyle:'Dash',label:{text:'Dew point 9.3°C',style:{color:RED,fontSize:'11px'}}}]},
+ series:[{name:'Min surface T',type:'column',color:A,data:DT.condensation.tmin,dataLabels:{enabled:true,format:'{y}',style:{color:TB,fontSize:'10px'}}}]
+}));
+})();
+</script>
+</body>
+</html>

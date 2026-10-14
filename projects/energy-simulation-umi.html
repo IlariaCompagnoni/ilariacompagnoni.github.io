@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Energy Simulation — UBEM (UMI) | Ilaria Compagnoni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f3f0;--card:#ffffff;--a:#0d9488;--ad:rgba(13,148,136,.10);--t:#1a2b33;--td:#5b6b73;--tb:#0f1e24;--br:#e2e0da;--f:'Inter',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--f);line-height:1.7;overflow-x:hidden}
+.wrap{max-width:900px;margin:0 auto;padding:48px 48px 80px}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--a);text-decoration:none;margin-bottom:40px;transition:gap .2s}
+.back:hover{gap:12px}
+.ph{font-size:13px;font-weight:600;color:var(--a);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+h1{font-size:40px;font-weight:800;color:var(--tb);line-height:1.12;letter-spacing:-1px;margin-bottom:16px}
+.sub{font-size:17px;color:var(--td);margin-bottom:24px;max-width:680px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.meta span{font-size:12px;font-weight:600;color:var(--a);background:var(--ad);padding:5px 12px;border-radius:12px}
+.ctx{font-size:13px;color:var(--td);margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid var(--br)}
+h2{font-size:24px;font-weight:700;color:var(--tb);margin:48px 0 16px;letter-spacing:-.3px}
+.cityband{display:flex;align-items:center;gap:12px;margin:56px 0 8px;padding:14px 20px;background:var(--card);border:1px solid var(--br);border-left:3px solid var(--a);border-radius:8px}
+.cityband .ci{font-size:22px}
+.cityband .ct{font-size:19px;font-weight:700;color:var(--tb)}
+.cityband .cl{font-size:12px;font-weight:600;color:var(--a);text-transform:uppercase;letter-spacing:.06em;margin-left:auto}
+h3{font-size:17px;font-weight:600;color:var(--a);margin:28px 0 10px}
+p{font-size:16px;color:var(--t);margin-bottom:16px}
+.lead{color:var(--td)}
+ul{list-style:none;margin:0 0 20px}
+li{font-size:15px;color:var(--td);padding:6px 0 6px 22px;position:relative}
+li::before{content:'▹';color:var(--a);position:absolute;left:0}
+.hl{color:var(--a);font-weight:600}
+.hw{color:var(--tb);font-weight:600}
+figure{margin:28px 0 36px;background:var(--card);border:1px solid var(--br);border-radius:10px;padding:20px;overflow:hidden}
+figure img{width:100%;height:auto;border-radius:6px;display:block;background:#fff}
+figcaption{font-size:13px;color:var(--td);margin-top:12px;text-align:center;font-style:italic}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:28px 0 36px}
+.kpi{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:22px;text-align:center}
+.kpi .n{font-size:28px;font-weight:800;color:var(--a);letter-spacing:-1px}
+.kpi .l{font-size:12px;color:var(--td);margin-top:6px;text-transform:uppercase;letter-spacing:.05em}
+.tbl{width:100%;border-collapse:collapse;margin:20px 0 36px;font-size:14px}
+.tbl th,.tbl td{border:1px solid var(--br);padding:10px 14px;text-align:center}
+.tbl th{background:var(--ad);color:var(--a);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.tbl td{color:var(--td)}
+.tbl td:first-child{text-align:left;color:var(--t);font-weight:500}
+.note{background:var(--card);border-left:3px solid var(--a);border-radius:6px;padding:16px 20px;margin:24px 0;font-size:15px;color:var(--td)}
+footer{text-align:center;padding:40px;font-size:12px;color:var(--td);border-top:1px solid var(--br)}
+@media(max-width:768px){.wrap{padding:32px 20px 60px}h1{font-size:30px}.cityband{flex-wrap:wrap}.cityband .cl{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../Ilaria Compagnoni — Portfolio (Optimized Particle Effect).html">← Back to portfolio</a>
+
+<p class="ph">Academic Project · Advanced Building Physics</p>
+<h1>Dynamic Energy Simulation with UBEM (UMI)</h1>
+<p class="sub">Multi-zone dynamic energy modelling of a two-zone building, run for two contrasting Italian climates to show how climate flips the design priorities — and how the envelope should respond.</p>
+<div class="meta"><span>UMI</span><span>UBEM</span><span>Dynamic Simulation</span><span>Building Physics</span><span>Energy Efficiency</span><span>Lumped Parameter Model</span></div>
+<p class="ctx">Polytechnic of Milan — Advanced Building Physics · Group 16 · Two case studies: Villafranca di Verona &amp; Palermo Boccadifalco</p>
+
+<h2>Overview</h2>
+<p class="lead">This project applies <span class="hw">Urban Building Energy Modelling (UBEM)</span> through a bottom-up, multi-zone dynamic simulation in <span class="hw">UMI</span> to a hypothetical two-zone building. For each climate the workflow is the same: quantify the monthly heating and cooling demand, redesign the envelope stratigraphy to cut the dominant need by at least 15%, and study the effect on indoor temperature with a <span class="hl">lumped-parameter model</span>.</p>
+<p class="lead">The key insight comes from running it in <span class="hw">two different climates</span>: the dominant energy need — and therefore the whole optimisation strategy — flips between them.</p>
+
+<h3>Building &amp; model setup (shared)</h3>
+<p>Two connected zones, adiabatic floor, 3 m height. <span class="hw">Zone 1</span> — 24 m², south window (40% WWR). <span class="hw">Zone 2</span> — 12 m², west window (30% WWR). No inter-zone heat exchange. Each zone uses a distinct envelope archetype (hollow-brick vs. concrete-panel walls, differing insulation and roof build-up); both share a single-glazing wood frame in the base case.</p>
+<figure><img src="img/fig1-geometry.png" alt="Base case geometry and orientation"><figcaption>Base-case geometry and orientation (plan, axonometric and façades) — common to both case studies.</figcaption></figure>
+
+<!-- CLIMATE COMPARISON -->
+<h2>Two Climates Compared</h2>
+<p class="lead">Same building, same method — opposite problem. Verona's continental climate is <span class="hw">heating-driven</span>; Palermo's Mediterranean climate is <span class="hw">cooling-driven</span>.</p>
+<table class="tbl">
+<tr><th>&nbsp;</th><th>🏔️ Villafranca di Verona</th><th>🌞 Palermo Boccadifalco</th></tr>
+<tr><td>Climate</td><td>Continental</td><td>Mediterranean</td></tr>
+<tr><td>Weather dataset</td><td>2000–2010</td><td>2007–2021</td></tr>
+<tr><td>Use</td><td>Residential</td><td>Office spaces</td></tr>
+<tr><td>Dominant need</td><td>Heating</td><td>Cooling</td></tr>
+<tr><td>Optimisation target</td><td>Reduce heating</td><td>Reduce cooling</td></tr>
+<tr><td>Key extra strategy</td><td>Roof + cavity-wall insulation</td><td>+ Low-E glazing (solar control)</td></tr>
+<tr><td>Heating reduction achieved</td><td>~50%</td><td>~50%</td></tr>
+</table>
+<div class="note">The envelope upgrade (roof insulation + cavity-wall insulation) cuts heating demand by roughly 50% in <em>both</em> climates. The difference is what matters next: in Palermo, that heavier envelope can <span class="hl">raise</span> the summer cooling load, which is why a low-E glazing study was added there.</div>
+
+<!-- VERONA -->
+<div class="cityband"><span class="ci">🏔️</span><span class="ct">Villafranca di Verona</span><span class="cl">Heating-driven</span></div>
+<p>In Verona's continental climate, <span class="hw">heating dominates</span>: from November to April the heating demand is about twice the cooling demand. Base-case annual need was 3240 kWh/y for Zone 1 vs. 2922 kWh/y for Zone 2 — so Zone 1 (larger, thermally weaker) set the target.</p>
+<figure><img src="img/verona-fig2-energy-zones.png" alt="Verona — energy need by zone"><figcaption>Verona · Figure 2 — Annual heating &amp; cooling need per zone (monthly breakdown). Heating clearly dominates.</figcaption></figure>
+<figure><img src="img/verona-fig3-energy-temp.png" alt="Verona — Zone 1 energy need vs temperature"><figcaption>Verona · Figure 3 — Zone 1 monthly heating/cooling vs. dry-bulb temperature. Heating peaks in the cold months.</figcaption></figure>
+<h3>Envelope optimisation — heating focus</h3>
+<p>Replacing the wall insulation with high-performance <span class="hl">cavity insulation</span> and adding a roof insulation layer (absent in the base case) brought the roof U-value from 1.46 to <span class="hw">0.34 W/m²K</span> and the wall from 0.57 to 0.36 W/m²K — a <span class="hw">~50% cut</span> in heating demand.</p>
+<figure><img src="img/verona-fig4-heating-comp.png" alt="Verona — heating demand before and after"><figcaption>Verona · Figure 4 — Monthly heating demand, base case vs. improved stratigraphy (Zone 1). ~50% reduction, peaking in January.</figcaption></figure>
+
+<!-- PALERMO -->
+<div class="cityband"><span class="ci">🌞</span><span class="ct">Palermo Boccadifalco</span><span class="cl">Cooling-driven</span></div>
+<p>In Palermo's Mediterranean climate the picture <span class="hw">inverts</span>: mild winters mean little heating, while hot summers and a long cooling season make <span class="hw">cooling the dominant need</span> (more than double the heating demand). Here Zone 2 — the office with the better envelope — drove the higher cooling requirement.</p>
+<figure><img src="img/fig2-energy-need-zones.png" alt="Palermo — energy need by zone and end use"><figcaption>Palermo · Figure 2 — Annual energy need per zone by end use (cooling, heating, lighting, equipment). Cooling leads.</figcaption></figure>
+<figure><img src="img/fig3-basecase-energy.png" alt="Palermo — base-case energy vs temperature"><figcaption>Palermo · Figure 3 — Base-case heating/cooling vs. dry-bulb temperature. The long, hot cooling season dominates.</figcaption></figure>
+<h3>Envelope optimisation — then a glazing problem</h3>
+<p>The same insulation upgrade cut the heating need by ~50%, but the heavier, better-insulated envelope <span class="hl">traps heat in summer</span>, nudging indoor temperatures up and threatening the cooling load.</p>
+<figure><img src="img/fig4-heating-comparison.png" alt="Palermo — heating demand before and after"><figcaption>Palermo · Figure 4 — Heating demand, base case vs. new stratigraphy (~50% reduction).</figcaption></figure>
+
+<h3>Lumped-parameter model &amp; low-E glazing</h3>
+<p>A lumped-parameter model (uniform building temperature, convective exchange, explicit time-stepping) tracked Zone 1's indoor temperature over a 24-hour cooling-season cycle. Indoor temperature stays almost flat — good thermal performance — but the extra insulation raises the summer average, so a <span class="hl">low-E glazing</span> study (solar factor 0.15) was added to cut solar gains.</p>
+<table class="tbl">
+<tr><th>Configuration</th><th>Roof U</th><th>Wall U</th><th>Glazing U</th><th>Solar factor</th></tr>
+<tr><td>Base case</td><td>1.46</td><td>0.56</td><td>1.4</td><td>0.35</td></tr>
+<tr><td>Extra insulation</td><td>0.34</td><td>0.37</td><td>1.4</td><td>0.35</td></tr>
+<tr><td>Low-E + extra insulation</td><td>0.34</td><td>0.37</td><td>1.4</td><td>0.15</td></tr>
+</table>
+<figure><img src="img/fig5-lumped-temp.png" alt="Palermo — lumped model indoor temperature"><figcaption>Palermo · Figure 5 — Zone 1 indoor temperature over 24 h, base case vs. adjusted stratigraphy, with exterior temperature and solar irradiation.</figcaption></figure>
+<figure><img src="img/fig6-glazing-lumped.png" alt="Palermo — lumped model with multiple configurations"><figcaption>Palermo · Figure 6 — Lumped-model indoor temperature for base case, extra insulation, and low-E + extra insulation.</figcaption></figure>
+
+<!-- CONCLUSION -->
+<h2>Conclusions</h2>
+<p>Added insulation is highly beneficial in winter and lowers whole-year energy use, but it is not automatically good for cooling — as the Palermo case shows, a heavier envelope can raise summer loads. Pairing the improved envelope with <span class="hl">low-solar-factor (low-E) glazing</span> reduces summer solar gains while keeping the winter U-value benefit. Across both climates the study supports a <span class="hw">"fabric-first"</span> approach — improve the envelope first — tuned to the local climate and balanced with glazing selection to manage both heating and cooling.</p>
+
+</div>
+<footer>Built and designed by <span style="color:var(--a)">Ilaria Compagnoni</span>. All rights reserved © 2026</footer>
+</body>
+</html>

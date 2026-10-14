@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ilaria Compagnoni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f3f0;--card:#ffffff;--a:#0d9488;--ad:rgba(13,148,136,.10);--t:#1a2b33;--td:#5b6b73;--tb:#0f1e24;--br:#e2e0da;--f:'Inter',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--t);font-family:var(--f);line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;background:rgba(244,243,240,.88);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid var(--br);display:flex;justify-content:space-between;align-items:center;padding:16px 48px}
+.logo{font-size:18px;font-weight:700;color:var(--tb);cursor:pointer;letter-spacing:-.3px}
+.nl{display:flex;gap:32px;list-style:none}.nl li label{font-size:14px;font-weight:500;color:var(--td);cursor:pointer;transition:color .2s}.nl li label:hover{color:var(--a)}
+input[name="p"]{display:none}.pg{display:none}
+#h:checked~.ph,#a:checked~.pa,#e:checked~.pe,#j:checked~.pj,#d:checked~.pd,#r:checked~.pr,#c:checked~.pc{display:block}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 48px 80px;max-width:1200px;margin:0 auto;width:100%}.hero-grid{display:grid;grid-template-columns:3fr 2fr;gap:56px;align-items:center;width:100%}.hero-text{min-width:0}
+.hh{font-size:15px;font-weight:500;color:var(--a);margin-bottom:20px}
+.hn{font-size:58px;font-weight:800;color:var(--tb);line-height:1.08;letter-spacing:-2px;margin-bottom:8px}
+.ht{font-size:36px;font-weight:600;color:var(--td);line-height:1.2;letter-spacing:-.5px;margin-bottom:24px}
+.hd{font-size:17px;color:var(--td);max-width:560px;line-height:1.7;margin-bottom:36px}
+.btn{display:inline-block;font-family:var(--f);font-size:14px;font-weight:600;color:var(--a);border:1px solid var(--a);padding:14px 28px;border-radius:4px;cursor:pointer;transition:background .2s;width:fit-content}.btn:hover{background:var(--ad)}
+.s{padding:100px 48px 80px;max-width:1200px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;margin:0 auto;width:100%}
+.st{font-size:22px;font-weight:700;color:var(--tb);margin-bottom:40px;display:flex;align-items:center;gap:12px;letter-spacing:-.3px}
+.st::after{content:'';flex:1;height:1px;background:var(--br);margin-left:16px}
+.ag{display:grid;grid-template-columns:5fr 4fr;gap:48px;align-items:center}.at{font-size:16px;color:var(--td);line-height:1.8}.at p{margin-bottom:16px}
+.hl{color:var(--a)}.hw{color:var(--tb);font-weight:600}
+#particleCanvas{cursor:pointer;justify-self:center;align-self:start}
+.sc{margin-bottom:20px}.sc h4{font-size:12px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.skl{display:flex;flex-wrap:wrap;gap:8px;list-style:none}.skl li{font-size:12px;font-weight:500;color:var(--t);background:var(--ad);padding:4px 12px;border-radius:12px}
+.tl{position:relative;padding-left:32px}.tl::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:var(--br)}
+.eb{position:relative;margin-bottom:48px}.eb:last-child{margin-bottom:0}
+.dot{position:absolute;left:-28px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--a);border:2px solid var(--bg)}
+.er{font-size:20px;font-weight:600;color:var(--tb);margin-bottom:2px;letter-spacing:-.2px}.co{color:var(--a)}
+.ed{font-size:13px;font-weight:500;color:var(--td);margin-bottom:16px}
+.el{list-style:none}.el li{font-size:15px;color:var(--td);padding:5px 0 5px 20px;position:relative;line-height:1.65}.el li::before{content:'▹';color:var(--a);position:absolute;left:0}
+.ft{background:var(--card);border:1px solid var(--a);border-radius:8px;padding:32px;margin-bottom:24px;position:relative;overflow:hidden}
+.ft::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--a),transparent)}
+.fl{font-size:11px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.k{background:var(--card);border:1px solid var(--br);border-radius:8px;padding:28px;transition:transform .2s,border-color .2s}.k:hover{transform:translateY(-4px);border-color:var(--a)}
+.ki{font-size:28px;margin-bottom:16px}.kn{font-size:18px;font-weight:600;color:var(--tb);margin-bottom:10px;letter-spacing:-.2px}
+.kd{font-size:14px;color:var(--td);line-height:1.6;margin-bottom:16px}
+.tg{display:flex;flex-wrap:wrap;gap:8px}.tg span{font-size:11px;font-weight:600;color:var(--a);background:var(--ad);padding:4px 10px;border-radius:12px}
+.fb{list-style:none;margin-bottom:16px}.fb li{font-size:14px;color:var(--td);padding:4px 0 4px 20px;position:relative;line-height:1.6}.fb li::before{content:'▹';color:var(--a);position:absolute;left:0}
+.ei{background:var(--card);border:1px solid var(--br);border-radius:8px;padding:28px;margin-bottom:16px;transition:border-color .2s}.ei:hover{border-color:var(--a)}
+.eg{font-size:17px;font-weight:600;color:var(--tb);margin-bottom:4px}.es{font-size:15px;color:var(--a);font-weight:500;margin-bottom:4px}.edt{font-size:12px;font-weight:500;color:var(--td);margin-bottom:8px}.edl{font-size:14px;color:var(--td)}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.ci{background:var(--card);border:1px solid var(--br);border-radius:8px;padding:20px}
+.cn{font-size:14px;font-weight:600;color:var(--tb);margin-bottom:4px}.cx{font-size:12px;font-weight:500;color:var(--a)}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.pc-card{background:var(--card);border:1px solid var(--br);border-radius:12px;padding:32px 24px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s}.pc-card:hover{transform:translateY(-6px);border-color:var(--a);box-shadow:0 8px 30px rgba(100,255,218,.08)}
+.pc-icon{font-size:36px;margin-bottom:14px}
+.pc-name{font-size:15px;font-weight:600;color:var(--tb);margin-bottom:6px;letter-spacing:-.2px}
+.pc-desc{font-size:12px;color:var(--td);line-height:1.5}
+.contact-page{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 48px}
+.cb{text-align:center;max-width:520px}
+.cb h3{font-size:15px;font-weight:500;color:var(--a);margin-bottom:16px}
+.cb h2{font-size:42px;font-weight:700;color:var(--tb);margin-bottom:20px;letter-spacing:-.5px}
+.cb p{font-size:16px;color:var(--td);line-height:1.7;margin-bottom:36px}
+.sr{display:flex;justify-content:center;gap:20px;margin-top:24px;flex-wrap:wrap}
+.sb{font-size:13px;font-weight:500;color:var(--td);padding:10px 20px;border:1px solid var(--br);border-radius:4px;cursor:pointer;transition:all .2s}.sb:hover{color:var(--a);border-color:var(--a);background:var(--ad)}
+footer{text-align:center;padding:40px;font-size:12px;color:var(--td);border-top:1px solid var(--br)}
+@media(max-width:768px){nav{padding:12px 20px}.nl{gap:12px}.nl li label{font-size:11px}.hero{padding:100px 20px 60px}.hn{font-size:32px}.ht{font-size:22px}.s{padding:80px 20px}.ag,.g2,.cg{grid-template-columns:1fr}.g3{grid-template-columns:1fr 1fr}.contact-page{padding:80px 20px}}
+
+.photo-gallery{margin-top:64px}
+.pg-title{font-size:22px;font-weight:700;color:var(--tb);margin-bottom:8px;letter-spacing:-.3px}
+.pg-sub{font-size:15px;color:var(--td);margin-bottom:32px;max-width:600px}
+.pg-cat{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.08em;margin:36px 0 16px}
+.pg-cat-ic{font-size:18px}
+.pg-cat::after{content:'';flex:1;height:1px;background:var(--br);margin-left:8px}
+.pg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.pg-item{position:relative;display:block;border-radius:10px;overflow:hidden;border:1px solid var(--br);background:var(--card);aspect-ratio:4/3;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s}
+.pg-item:hover{transform:translateY(-5px);border-color:var(--a);box-shadow:0 10px 30px rgba(100,255,218,.12)}
+.pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.pg-item:hover img{transform:scale(1.06)}
+.pg-cap{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 10px;font-size:12px;font-weight:500;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75));opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.pg-item:hover .pg-cap{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.pg-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.photo-gallery{margin-top:48px}}
+.pg-cat-note{display:block;font-size:11px;font-weight:500;color:var(--td);text-transform:none;letter-spacing:0;margin-top:4px}
+.k.klink{display:block;text-decoration:none;color:inherit}.kmore{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--a);opacity:.85;transition:opacity .2s}.k.klink:hover .kmore{opacity:1}
+.ftlink{transition:transform .2s,box-shadow .2s}.ftlink:hover .ft{box-shadow:0 8px 24px rgba(13,148,136,.18);transform:translateY(-2px)}.ft{transition:transform .2s,box-shadow .2s}.ab-photo{width:280px;max-width:100%;height:auto;border-radius:12px;margin-top:20px;display:block;justify-self:center;box-shadow:0 8px 24px rgba(0,0,0,.18)}.hero-canvas{display:flex;justify-content:center}#particleCanvas{cursor:pointer;max-width:100%;height:auto}.ab-photos{display:flex;flex-direction:row;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap}.ab-photos .ab-photo{width:calc(50% - 9px);min-width:170px;max-width:230px;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.18);margin-top:0;object-fit:cover}@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero-canvas{order:-1}}</style>
+</head>
+<body>
+<nav>
+<label for="h" class="logo">Ilaria Compagnoni</label>
+<ul class="nl">
+<li><label for="h">Home</label></li>
+<li><label for="a">About</label></li>
+<li><label for="e">Experience</label></li>
+<li><label for="j">Projects</label></li>
+<li><label for="d">Education</label></li>
+<li><label for="r">Passions</label></li>
+<li><label for="c">Contact</label></li>
+</ul>
+</nav>
+<input type="radio" name="p" id="h" checked><input type="radio" name="p" id="a"><input type="radio" name="p" id="e"><input type="radio" name="p" id="j"><input type="radio" name="p" id="d"><input type="radio" name="p" id="r"><input type="radio" name="p" id="c">
+
+<div class="pg ph"><section class="hero"><div class="hero-grid"><div class="hero-text"><p class="hh">hi, i'm</p><h1 class="hn">Ilaria Compagnoni.</h1><h2 class="ht">I engineer the built environment.</h2><p class="hd">Building Services & Project Management Engineer with a Master's degree <em>(cum laude)</em> from Polytechnic of Milan. Skilled in MEP systems, energy efficiency, BIM coordination, and Digital Twin — bridging traditional engineering with cutting-edge digital technologies.</p><label for="a" class="btn">Explore my work →</label></div><div class="hero-canvas"><canvas id="particleCanvas" width="420" height="520"></canvas></div></div></section></div>
+
+<div class="pg pa"><section class="s">
+<h2 class="st">About Me</h2>
+<div class="ag"><div class="at">
+<p>I am a <span class="hw">Building and Energy Engineer</span> with a Master's degree (<span class="hl">cum laude</span>) from <span class="hw">Polytechnic of Milan</span>, combining hands-on critical infrastructure operations with project coordination and performance analysis.</p>
+<p>I spent a semester at <span class="hw">NYIT</span>, researching extraterrestrial habitat thermal modelling. I'm currently an <span class="hl">Engineering Operations Intern at AWS</span>, contributing to data center infrastructure.</p>
+<p>My goal is to bridge traditional engineering with digital technologies in <span class="hl">building energy modeling</span>, <span class="hl">building physics</span>, <span class="hl">CFD</span>, and <span class="hl">wind engineering</span>.</p>
+<div class="sc"><h4>Building Services</h4><ul class="skl"><li>MEP Systems</li><li>HVAC</li><li>Building Physics</li><li>Thermal Modelling</li><li>Energy Efficiency</li><li>Heat Transfer</li></ul></div>
+<div class="sc"><h4>Software & Tools</h4><ul class="skl"><li>Revit</li><li>AutoCAD</li><li>Python</li><li>Dynamo</li><li>IES VE</li><li>COMSOL</li><li>EnergyPlus</li><li>Rhino</li></ul></div>
+</div>
+<div class="ab-photos"><img class="ab-photo" src="images/about-closeup.jpg" alt="Ilaria Compagnoni — portrait (close-up)"><img class="ab-photo" src="images/about-portrait.jpg" alt="Ilaria Compagnoni — professional portrait"></div>
+</div>
+</section></div>
+
+<div class="pg pe"><section class="s">
+<h2 class="st">Experience</h2>
+<div class="tl">
+<div class="eb"><div class="dot"></div>
+<div class="er">Data Center Engineering Operations Intern <span class="co">@ AWS</span></div>
+<div class="ed">JUL 2026 — PRESENT</div>
+<ul class="el">
+<li>Contributing to cross-functional projects involving IT, Networking, Logistics, Safety, Security and external vendors</li>
+<li>Supporting on-site contractors, ensuring compliance with safety standards</li>
+<li>Assisting with change management requests and incident management tickets</li>
+<li>Contributing to energy trend data analysis and preparation of technical reports</li>
+<li>Driving projects to increase facility capacity, energy efficiency and MEP reliability</li>
+</ul></div>
+<div class="eb"><div class="dot"></div>
+<div class="er">BIM and Digital Twin Consultant <span class="co">@ BIP — Prysmian Group</span></div>
+<div class="ed">NOV 2025 — MAR 2026</div>
+<ul class="el">
+<li>Coordinated 4 concurrent construction projects across mechanical, electrical, structural and architectural disciplines</li>
+<li>Implemented 6 digital models enhancing project accuracy for industrial facilities</li>
+<li>Produced high-fidelity parametric models (LOD 350+) supporting facility management</li>
+<li>Implemented 3 automation scripts to enhance modelling efficiency</li>
+</ul></div>
+</div>
+</section></div>
+
+<div class="pg pj"><section class="s">
+<h2 class="st">Projects</h2>
+<a class="ftlink" href="projects/thermal-extraterrestrial-habitats.html" style="text-decoration:none;display:block"><div class="ft">
+<div class="fl">⭐ Featured Research</div>
+<div class="kn" style="font-size:22px;margin-bottom:12px">Thermal Assessment of Buildings in Extraterrestrial Environments</div>
+<div class="kd" style="font-size:15px;line-height:1.7;margin-bottom:12px">Joint research between Polytechnic of Milan and NYIT (Jan–Dec 2025), investigating thermal performance of building envelopes for extreme extraterrestrial conditions.</div>
+<ul class="fb">
+<li>Designed and optimised multi-layer building envelope systems through parametric analysis</li>
+<li>Executed steady-state and dynamic simulations under extreme conditions</li>
+<li>Explored novel insulation strategies for radiation shielding and thermal regulation</li>
+</ul>
+<div class="tg"><span>Thermal Modelling</span><span>COMSOL</span><span>EnergyPlus</span><span>Building Physics</span><span>Heat Transfer</span></div>
+<span class="kmore" style="display:inline-block;margin-top:8px">View details →</span></div></a>
+<div class="g2">
+<a class="k klink" href="projects/energy-simulation-umi.html"><div class="ki">🏢</div><div class="kn">Dynamic Energy Simulation — UBEM (UMI)</div><div class="kd">Multi-zone dynamic energy modelling of a two-zone building (bottom-up, UMI). Analysed monthly heating/cooling demand across two climates (Verona &amp; Palermo), then optimised the envelope stratigraphy — roof and cavity-wall insulation — achieving a ~50% reduction in heating energy need. Developed a lumped-parameter model for indoor temperature dynamics.</div><div class="tg"><span>UMI</span><span>UBEM</span><span>Dynamic Simulation</span><span>Building Physics</span><span>Energy Efficiency</span></div><span class="kmore">View details →</span></a>
+<a class="k klink" href="projects/weil-hall-integrated-design.html"><div class="ki">🏛️</div><div class="kn">Weil Hall — Integrated Building Design</div><div class="kd">Full integrated-design study of Weil Hall (KieranTimberlake, Washington University in St. Louis). Two parts: architecture &amp; context (history, site, climate, LEED-Platinum sustainability) and engineering (steel structure, unitized curtain wall, THERM thermal analysis, radiant MEP with heat recovery).</div><div class="tg"><span>Integrated Design</span><span>Structure</span><span>Envelope</span><span>MEP</span><span>LEED</span></div><span class="kmore">View details →</span></a>
+<a class="k klink" href="projects/curtain-wall-dublin.html"><div class="ki">🪟</div><div class="kn">Unitised Curtain Wall — Dublin Office Tower</div><div class="kd">Full engineering design of a unitised curtain-wall façade for a 10-storey Dublin office building: glazing selection (U = 1.0 W/m²K), Eurocode structural verification (MEPLA), THERM thermal &amp; condensation analysis, shading, acoustics, fire safety, maintenance (BMU) and sustainability — fully detailed at 1:4 (D1–D8).</div><div class="tg"><span>Curtain Wall</span><span>Structural</span><span>THERM</span><span>Façade Detailing</span><span>MEPLA</span></div><span class="kmore">View details →</span></a><a class="k klink" href="projects/fiscale-tower-reconstruction.html"><div class="ki">🏰</div><div class="kn">Tor Fiscale & its Roman Aqueducts</div><div class="kd">Scan-to-HBIM reconstruction of a medieval tower where the Claudio–Anio Novus and Marcia–Tepula–Giulia aqueducts cross at 90°. Laser scanning + UAV photogrammetry + software interoperability (ReCap, Metashape, Rhino, Revit) produced a parametric HBIM split into 6 stratigraphic units that reads its own construction history.</div><div class="tg"><span>Scan-to-HBIM</span><span>Laser Scanning</span><span>Photogrammetry</span><span>Revit</span><span>Heritage BIM</span></div><span class="kmore">View details →</span></a>
+<div class="k"><div class="ki">🏢</div><div class="kn">Digital Twin — Industrial Facilities</div><div class="kd">6 digital models for Prysmian Group with LOD 350+.</div><div class="tg"><span>Digital Twin</span><span>Revit</span></div></div>
+<div class="k"><div class="ki">⚡</div><div class="kn">Data Center Operations</div><div class="kd">AWS projects — energy efficiency, capacity and MEP reliability.</div><div class="tg"><span>AWS</span><span>MEP</span></div></div>
+<div class="k"><div class="ki">🔧</div><div class="kn">BIM Automation Scripts</div><div class="kd">3 automation scripts using Dynamo and Python.</div><div class="tg"><span>Python</span><span>Dynamo</span></div></div>
+
+
+</div>
+</section></div>
+
+<div class="pg pd"><section class="s">
+<h2 class="st">Education</h2>
+<div class="ei"><div class="eg">Master's in Building Engineering — 110/110 cum laude</div><div class="es">Polytechnic of Milan</div><div class="edt">SEP 2023 — DEC 2025</div><div class="edl">Focus: Energy Efficiency, Building Physics, HVAC, MEP, Sustainability</div></div>
+<div class="ei"><div class="eg">Exchange Student — Thermal Modelling Research</div><div class="es">New York Institute of Technology</div><div class="edt">JAN 2025 — MAY 2025</div></div>
+<div class="ei"><div class="eg">Bachelor's in Building & Construction Eng. — GPA 3.7</div><div class="es">Polytechnic of Milan</div><div class="edt">SEP 2020 — MAR 2024</div></div>
+<div class="cg">
+<div class="ci"><div class="cn">TOEIC Certification</div><div class="cx">ETS — English</div></div>
+<div class="ci"><div class="cn">CS50P: Python</div><div class="cx">Harvard University</div></div>
+<div class="ci"><div class="cn">Italian</div><div class="cx">Native Speaker</div></div>
+<div class="ci"><div class="cn">English</div><div class="cx">Proficient (TOEIC)</div></div>
+</div>
+<div style="margin-top:40px;padding:20px;background:var(--card);border:1px solid var(--br);border-radius:8px">
+<h4 style="font-size:13px;font-weight:700;color:var(--a);margin-bottom:8px">🏅 Additional</h4>
+<p style="font-size:14px;color:var(--td)"><strong style="color:var(--tb)">Competitive Athlete — Rowing (2012–2022):</strong> 10-year commitment demonstrating discipline, resilience, and team collaboration.</p>
+</div>
+</section></div>
+
+<div class="pg pr"><section class="s">
+<h2 class="st">Passions</h2>
+<p style="font-size:16px;color:var(--td);margin-bottom:40px;max-width:600px">Beyond engineering, these are the things that inspire me, fuel my curiosity, and shape how I see the world.</p>
+<div class="g3">
+<div class="pc-card"><div class="pc-icon">📷</div><div class="pc-name">Photography</div><div class="pc-desc">Capturing light, architecture, and everyday moments through the lens.</div></div>
+<div class="pc-card"><div class="pc-icon">🗽</div><div class="pc-name">New York City</div><div class="pc-desc">The city that never sleeps — where I fell in love with skylines and possibility.</div></div>
+<div class="pc-card"><div class="pc-icon">🔬</div><div class="pc-name">Science</div><div class="pc-desc">Understanding the world through physics, thermodynamics, and natural laws.</div></div>
+<div class="pc-card"><div class="pc-icon">🛠️</div><div class="pc-name">Building New Stuff</div><div class="pc-desc">From physical models to digital tools — turning ideas into something tangible.</div></div>
+<div class="pc-card"><div class="pc-icon">✍️</div><div class="pc-name">Hand Lettering</div><div class="pc-desc">Crafting letters by hand — where precision meets creative expression.</div></div>
+<div class="pc-card"><div class="pc-icon">💻</div><div class="pc-name">Technology</div><div class="pc-desc">Exploring how digital innovation transforms design, building, and living.</div></div>
+<div class="pc-card"><div class="pc-icon">✈️</div><div class="pc-name">Travelling</div><div class="pc-desc">Discovering new cultures, landscapes, and perspectives around the world.</div></div>
+<div class="pc-card"><div class="pc-icon">🥾</div><div class="pc-name">Hiking</div><div class="pc-desc">Finding clarity and inspiration on mountain trails and in nature's beauty.</div></div>
+<div class="pc-card"><div class="pc-icon">👗</div><div class="pc-name">Fashion</div><div class="pc-desc">Expressing creativity through style — where design meets personal identity.</div></div>
+<div class="pc-card"><div class="pc-icon">🍜</div><div class="pc-name">Trying New Food</div><div class="pc-desc">From Italian roots to global flavours — one dish at a time.</div></div>
+<div class="pc-card"><div class="pc-icon">🎿</div><div class="pc-name">Skiing</div><div class="pc-desc">Chasing fresh powder and mountain views — nothing beats a good slope.</div></div>
+</div>
+
+<div class="photo-gallery">
+<h3 class="pg-title">📷 Photo Gallery</h3>
+<p class="pg-sub">A visual diary — aerial views, New York, food, and life in between.</p>
+<div class="pg-cat"><span class="pg-cat-ic">🚁</span><span>Aerial / Drone<span class="pg-cat-note">Shot with a DJI Mini 4 Pro</span></span></div>
+<div class="pg-grid">
+<a class="pg-item" href="images/aerial-01.jpg" target="_blank" rel="noopener"><img src="images/aerial-01.jpg" alt="Turquoise shoreline from above" loading="lazy"><span class="pg-cap">Turquoise shoreline from above</span></a>
+<a class="pg-item" href="images/aerial-02.jpg" target="_blank" rel="noopener"><img src="images/aerial-02.jpg" alt="Coastal tower, aerial view" loading="lazy"><span class="pg-cap">Coastal tower, aerial view</span></a>
+<a class="pg-item" href="images/aerial-03.jpg" target="_blank" rel="noopener"><img src="images/aerial-03.jpg" alt="Crystal-clear waters" loading="lazy"><span class="pg-cap">Crystal-clear waters</span></a>
+<a class="pg-item" href="images/aerial-04.jpg" target="_blank" rel="noopener"><img src="images/aerial-04.jpg" alt="Snow-capped alpine peaks" loading="lazy"><span class="pg-cap">Snow-capped alpine peaks</span></a>
+<a class="pg-item" href="images/aerial-05.jpg" target="_blank" rel="noopener"><img src="images/aerial-05.jpg" alt="Mountain ridges" loading="lazy"><span class="pg-cap">Mountain ridges</span></a>
+<a class="pg-item" href="images/aerial-06.jpg" target="_blank" rel="noopener"><img src="images/aerial-06.jpg" alt="Green valley and river" loading="lazy"><span class="pg-cap">Green valley and river</span></a>
+<a class="pg-item" href="images/aerial-07.jpg" target="_blank" rel="noopener"><img src="images/aerial-07.jpg" alt="Mountain fortress" loading="lazy"><span class="pg-cap">Mountain fortress</span></a>
+<a class="pg-item" href="images/aerial-08.jpg" target="_blank" rel="noopener"><img src="images/aerial-08.jpg" alt="Livigno at sunset" loading="lazy"><span class="pg-cap">Livigno at sunset</span></a>
+</div>
+<div class="pg-cat"><span class="pg-cat-ic">🗽</span>New York</div>
+<div class="pg-grid">
+<a class="pg-item" href="images/newyork-01.jpg" target="_blank" rel="noopener"><img src="images/newyork-01.jpg" alt="Skyline at sunset" loading="lazy"><span class="pg-cap">Skyline at sunset</span></a>
+<a class="pg-item" href="images/newyork-02.jpg" target="_blank" rel="noopener"><img src="images/newyork-02.jpg" alt="Blue hour skyline" loading="lazy"><span class="pg-cap">Blue hour skyline</span></a>
+<a class="pg-item" href="images/newyork-03.jpg" target="_blank" rel="noopener"><img src="images/newyork-03.jpg" alt="Skyscraper glow" loading="lazy"><span class="pg-cap">Skyscraper glow</span></a>
+<a class="pg-item" href="images/newyork-04.jpg" target="_blank" rel="noopener"><img src="images/newyork-04.jpg" alt="Sun between the towers" loading="lazy"><span class="pg-cap">Sun between the towers</span></a>
+<a class="pg-item" href="images/newyork-05.jpg" target="_blank" rel="noopener"><img src="images/newyork-05.jpg" alt="Times Square at night" loading="lazy"><span class="pg-cap">Times Square at night</span></a>
+<a class="pg-item" href="images/newyork-06.jpg" target="_blank" rel="noopener"><img src="images/newyork-06.jpg" alt="City lights" loading="lazy"><span class="pg-cap">City lights</span></a>
+<a class="pg-item" href="images/newyork-07.jpg" target="_blank" rel="noopener"><img src="images/newyork-07.jpg" alt="Times Square crowd" loading="lazy"><span class="pg-cap">Times Square crowd</span></a>
+<a class="pg-item" href="images/newyork-08.jpg" target="_blank" rel="noopener"><img src="images/newyork-08.jpg" alt="Looking up" loading="lazy"><span class="pg-cap">Looking up</span></a>
+<a class="pg-item" href="images/newyork-09.jpg" target="_blank" rel="noopener"><img src="images/newyork-09.jpg" alt="The Vessel" loading="lazy"><span class="pg-cap">The Vessel</span></a>
+<a class="pg-item" href="images/newyork-10.jpg" target="_blank" rel="noopener"><img src="images/newyork-10.jpg" alt="Morgan Library" loading="lazy"><span class="pg-cap">Morgan Library</span></a>
+<a class="pg-item" href="images/newyork-11.jpg" target="_blank" rel="noopener"><img src="images/newyork-11.jpg" alt="New York or Nowhere" loading="lazy"><span class="pg-cap">New York or Nowhere</span></a>
+<a class="pg-item" href="images/newyork-12.jpg" target="_blank" rel="noopener"><img src="images/newyork-12.jpg" alt="One World Trade at dusk" loading="lazy"><span class="pg-cap">One World Trade at dusk</span></a>
+<a class="pg-item" href="images/newyork-13.jpg" target="_blank" rel="noopener"><img src="images/newyork-13.jpg" alt="The Met — sculpture court" loading="lazy"><span class="pg-cap">The Met — sculpture court</span></a>
+<a class="pg-item" href="images/newyork-14.jpg" target="_blank" rel="noopener"><img src="images/newyork-14.jpg" alt="Brownstone, red door" loading="lazy"><span class="pg-cap">Brownstone, red door</span></a>
+<a class="pg-item" href="images/newyork-15.jpg" target="_blank" rel="noopener"><img src="images/newyork-15.jpg" alt="Sunset over the Hudson" loading="lazy"><span class="pg-cap">Sunset over the Hudson</span></a>
+<a class="pg-item" href="images/newyork-16.jpg" target="_blank" rel="noopener"><img src="images/newyork-16.jpg" alt="Fireworks over the East River" loading="lazy"><span class="pg-cap">Fireworks over the East River</span></a>
+</div>
+<div class="pg-cat"><span class="pg-cat-ic">🍝</span>Food</div>
+<div class="pg-grid">
+<a class="pg-item" href="images/food-01.jpg" target="_blank" rel="noopener"><img src="images/food-01.jpg" alt="Octopus, plated" loading="lazy"><span class="pg-cap">Octopus, plated</span></a>
+<a class="pg-item" href="images/food-02.jpg" target="_blank" rel="noopener"><img src="images/food-02.jpg" alt="Dessert" loading="lazy"><span class="pg-cap">Dessert</span></a>
+<a class="pg-item" href="images/food-03.jpg" target="_blank" rel="noopener"><img src="images/food-03.jpg" alt="Tartare" loading="lazy"><span class="pg-cap">Tartare</span></a>
+<a class="pg-item" href="images/food-04.jpg" target="_blank" rel="noopener"><img src="images/food-04.jpg" alt="Ravioli" loading="lazy"><span class="pg-cap">Ravioli</span></a>
+<a class="pg-item" href="images/food-05.jpg" target="_blank" rel="noopener"><img src="images/food-05.jpg" alt="Fresh croissants" loading="lazy"><span class="pg-cap">Fresh croissants</span></a>
+<a class="pg-item" href="images/food-06.jpg" target="_blank" rel="noopener"><img src="images/food-06.jpg" alt="Filled pastries" loading="lazy"><span class="pg-cap">Filled pastries</span></a>
+<a class="pg-item" href="images/food-07.jpg" target="_blank" rel="noopener"><img src="images/food-07.jpg" alt="Assorted donuts" loading="lazy"><span class="pg-cap">Assorted donuts</span></a>
+<a class="pg-item" href="images/food-08.jpg" target="_blank" rel="noopener"><img src="images/food-08.jpg" alt="NYC burger" loading="lazy"><span class="pg-cap">NYC burger</span></a>
+</div>
+<div class="pg-cat"><span class="pg-cat-ic">📸</span>Me / Lifestyle</div>
+<div class="pg-grid">
+<a class="pg-item" href="images/lifestyle-01.jpg" target="_blank" rel="noopener"><img src="images/lifestyle-01.jpg" alt="On the move" loading="lazy"><span class="pg-cap">On the move</span></a>
+<a class="pg-item" href="images/lifestyle-02.jpg" target="_blank" rel="noopener"><img src="images/lifestyle-02.jpg" alt="Villa on Lake Como" loading="lazy"><span class="pg-cap">Villa on Lake Como</span></a>
+<a class="pg-item" href="images/lifestyle-03.jpg" target="_blank" rel="noopener"><img src="images/lifestyle-03.jpg" alt="Lakeside pergola" loading="lazy"><span class="pg-cap">Lakeside pergola</span></a>
+<a class="pg-item" href="images/lifestyle-04.jpg" target="_blank" rel="noopener"><img src="images/lifestyle-04.jpg" alt="Graduation day" loading="lazy"><span class="pg-cap">Graduation day</span></a>
+<a class="pg-item" href="images/lifestyle-05.jpg" target="_blank" rel="noopener"><img src="images/lifestyle-05.jpg" alt="Brooklyn Bridge" loading="lazy"><span class="pg-cap">Brooklyn Bridge</span></a>
+<a class="pg-item" href="images/lifestyle-06.jpg" target="_blank" rel="noopener"><img src="images/lifestyle-06.jpg" alt="NYC coffee run" loading="lazy"><span class="pg-cap">NYC coffee run</span></a>
+<a class="pg-item" href="images/lifestyle-07.jpg" target="_blank" rel="noopener"><img src="images/lifestyle-07.jpg" alt="Everyday style" loading="lazy"><span class="pg-cap">Everyday style</span></a>
+</div>
+</div>
+</section></div>
+
+<div class="pg pc"><section class="contact-page">
+<div class="cb">
+<h3>What's Next?</h3>
+<h2>Get In Touch</h2>
+<p>I'm exploring opportunities in building energy modeling, building physics, CFD, and wind engineering — across Europe, UK, Ireland, and the US.</p>
+<label for="h" class="btn">Say Hello →</label>
+<div class="sr">
+<span class="sb">📧 ilariacompagnoni01@gmail.com</span>
+<span class="sb">💼 LinkedIn</span>
+<span class="sb">🐙 GitHub</span>
+</div>
+</div>
+</section></div>
+
+<footer>Built and designed by <span style="color:var(--a)">Ilaria Compagnoni</span>. All rights reserved © 2026</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('particleCanvas');
+  var x=c.getContext('2d');
+  var W=c.width,H=c.height;
+  var CH=['.','+','·','=','#'];
+  var mx=-999,my=-999,smx=-999,smy=-999;
+  var P=[],t=0;
+
+  c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top};
+  c.onmouseleave=function(){mx=-999;my=-999};
+
+  var img=new Image();
+  img.onload=function(){
+    var oc=document.createElement('canvas');oc.width=W;oc.height=H;
+    var ox=oc.getContext('2d');ox.drawImage(img,0,0,W,H);
+    var d=ox.getImageData(0,0,W,H).data;
+    for(var y=0;y<H;y+=6){
+      for(var xx=0;xx<W;xx+=6){
+        var i=(y*W+xx)*4;
+        var b=(d[i]+d[i+1]+d[i+2])/3;
+        if(b>25){
+          var ci=Math.min((b/255*CH.length)|0,CH.length-1);
+          P.push({x:xx,y:y,ox:xx,oy:y,ch:CH[ci],b:b,vx:0,vy:0});
+        }
+      }
+    }
+    loop();
+  };
+  img.src='images/particle-portrait.jpg';
+
+  function loop(){
+    x.fillStyle='rgba(244,243,240,0.30)';
+    x.fillRect(0,0,W,H);
+    t+=0.02;
+
+    smx+=(mx-smx)*0.12;
+    smy+=(my-smy)*0.12;
+
+    var n=P.length;
+    for(var i=0;i<n;i++){
+      var p=P[i];
+      var dx=smx-p.x,dy=smy-p.y;
+      var d2=dx*dx+dy*dy;
+
+      if(d2<8100&&mx>-500){
+        var dist=Math.sqrt(d2);
+        var f=(90-dist)/90;
+        f=f*f*3;
+        p.vx-=(dx/dist)*f;
+        p.vy-=(dy/dist)*f;
+      }
+
+      var wy=Math.sin(t+p.ox*0.025)*1.8;
+
+      p.vx+=(p.ox-p.x)*0.045;
+      p.vy+=(p.oy+wy-p.y)*0.045;
+      p.vx*=0.86;
+      p.vy*=0.86;
+      p.x+=p.vx;
+      p.y+=p.vy;
+
+      var norm=p.b/255;
+      var a=0.2+norm*0.8;
+      var g=170+norm*85|0;
+      x.fillStyle='rgba(11,'+(90+((norm*40)|0))+',100,'+(0.35+norm*0.65)+')';
+      x.font=(3+norm*5)+'px Inter,sans-serif';
+      x.fillText(p.ch,p.x,p.y);
+    }
+    requestAnimationFrame(loop);
+  }
+})();
+</script>
+</body>
+</html>

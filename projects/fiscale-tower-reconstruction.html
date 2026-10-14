@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan-to-HBIM — Tor Fiscale & its Roman Aqueducts | Ilaria Compagnoni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f3f0;--card:#ffffff;--a:#0d9488;--ad:rgba(13,148,136,.10);--t:#1a2b33;--td:#5b6b73;--tb:#0f1e24;--br:#e2e0da;--f:'Inter',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--f);line-height:1.7;overflow-x:hidden}
+.wrap{max-width:960px;margin:0 auto;padding:48px 48px 80px}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--a);text-decoration:none;margin-bottom:40px;transition:gap .2s}
+.back:hover{gap:12px}
+.ph{font-size:13px;font-weight:600;color:var(--a);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+h1{font-size:40px;font-weight:800;color:var(--tb);line-height:1.12;letter-spacing:-1px;margin-bottom:16px}
+.sub{font-size:17px;color:var(--td);margin-bottom:24px;max-width:720px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.meta span{font-size:12px;font-weight:600;color:var(--a);background:var(--ad);padding:5px 12px;border-radius:12px}
+.ctx{font-size:13px;color:var(--td);margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid var(--br)}
+h2{font-size:24px;font-weight:700;color:var(--tb);margin:48px 0 16px;letter-spacing:-.3px}
+.partband{display:flex;align-items:center;gap:12px;margin:56px 0 8px;padding:14px 20px;background:var(--card);border:1px solid var(--br);border-left:3px solid var(--a);border-radius:8px}
+.partband .pi{font-size:22px}.partband .pt{font-size:19px;font-weight:700;color:var(--tb)}
+.partband .pl{font-size:12px;font-weight:600;color:var(--a);text-transform:uppercase;letter-spacing:.06em;margin-left:auto}
+h3{font-size:17px;font-weight:600;color:var(--a);margin:32px 0 10px}
+p{font-size:16px;color:var(--t);margin-bottom:16px}
+.lead{color:var(--td)}.hl{color:var(--a);font-weight:600}.hw{color:var(--tb);font-weight:600}
+figure{margin:24px 0 32px;background:var(--card);border:1px solid var(--br);border-radius:10px;padding:16px;overflow:hidden}
+figure img{width:100%;height:auto;border-radius:6px;display:block;background:#fff}
+figcaption{font-size:13px;color:var(--td);margin-top:12px;text-align:center;font-style:italic}
+.chartcard{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:20px 18px 12px;margin:24px 0 32px}
+.chartcard h4{font-size:14px;font-weight:600;color:var(--tb);margin:0 0 4px}
+.chartcard .cs{font-size:12px;color:var(--td);margin:0 0 12px}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:24px 0 32px}
+.kpi{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:22px;text-align:center}
+.kpi .n{font-size:26px;font-weight:800;color:var(--a);letter-spacing:-.5px}
+.kpi .l{font-size:12px;color:var(--td);margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0 32px}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+.strat{display:grid;grid-template-columns:1fr;gap:0;margin:20px 0 32px;background:var(--card);border:1px solid var(--br);border-radius:10px;overflow:hidden}
+.strat .row{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--br)}
+.strat .row:last-child{border-bottom:none}
+.strat .sw{width:26px;height:26px;border-radius:6px;flex:none}
+.strat .rt{font-size:14px;font-weight:600;color:var(--tb)}
+.strat .rd{font-size:12.5px;color:var(--td)}
+.note{font-size:13px;color:var(--td);background:var(--card);border:1px solid var(--br);border-left:3px solid var(--a);border-radius:8px;padding:12px 16px;margin:14px 0 24px}
+.vtbl{width:100%;border-collapse:collapse;margin:16px 0 10px;font-size:13.5px;background:var(--card);border:1px solid var(--br);border-radius:10px;overflow:hidden}
+.vtbl th,.vtbl td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--br)}
+.vtbl th{background:var(--ad);color:var(--tb);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.vtbl td:first-child{text-align:left;font-weight:600;color:var(--tb)}
+.vtbl tr:last-child td{border-bottom:none}
+.ok{color:#1a9d6b;font-weight:700}
+footer{text-align:center;padding:40px;font-size:12px;color:var(--td);border-top:1px solid var(--br)}
+@media(max-width:768px){.wrap{padding:32px 20px 60px}h1{font-size:30px}.partband{flex-wrap:wrap}.partband .pl{margin-left:0}}
+.fitfig{display:table;margin-left:auto;margin-right:auto;width:auto;max-width:100%}.fitfig img{width:auto;max-width:100%;max-height:620px}.outcard{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:18px;margin:20px 0 28px}.outcard .oct{font-size:15px;font-weight:700;color:var(--tb);margin-bottom:4px}.outcard .ocs{font-size:13px;color:var(--td);margin-bottom:16px}.outgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:start}.outgrid .big{grid-row:1 / span 2;margin:0;background:transparent;border:none;border-radius:0;padding:0;overflow:visible}.outgrid .big img{border-radius:6px}.outgrid figure{margin:0;background:transparent;border:none;padding:0}.outgrid figure img{border-radius:6px;border:1px solid var(--br)}.outgrid .param img{background:#fff;max-width:100%}.outgrid figcaption{font-size:12px;color:var(--td);margin-top:8px;text-align:left;font-style:normal}@media(max-width:720px){.outgrid{grid-template-columns:1fr}.outgrid .big{grid-row:auto}}</style>
+<body>
+<div class="wrap">
+<a class="back" href="../index.html">← Back to portfolio</a>
+<div class="ph">Bachelor's Thesis · Heritage BIM · Scan-to-HBIM</div>
+<h1>Tor Fiscale & its Roman Aqueducts</h1>
+<p class="sub">A Scan-to-HBIM reconstruction of a medieval tower where two monumental Roman aqueducts — the <span class="hw">Claudio–Anio Novus</span> and the <span class="hw">Marcia–Tepula–Giulia</span> — cross at right angles. Laser scanning, photogrammetry and software interoperability turned a fragmentary archaeological ruin into a parametric, information-rich 3D model that reads its own construction history.</p>
+<div class="meta">
+<span>Scan-to-HBIM</span><span>Laser Scanning</span><span>Photogrammetry</span><span>Autodesk Revit</span><span>Rhinoceros</span><span>Metashape</span><span>Heritage BIM</span><span>Archaeology of Architecture</span>
+</div>
+<div class="ctx">Bachelor's Degree in Building & Construction Engineering — Politecnico di Milano · Supervisor Prof. Fabrizio Banfi · Co-supervisors Dott. Stefano Roascio & Prof. Raffaella Brumana · In collaboration with the GIcarus Lab (Dept. ABC, PoliMi) and the Soprintendenza Speciale di Roma · A.Y. 2023/24, graduation March 2024</div>
+
+<p class="lead">Roman aqueducts are among the most expressive symbols of ancient engineering — structures that ran for tens of kilometres and survived millennia of transformation. This thesis focuses on the stretch where two of them intersect <span class="hl">twice</span> at <span class="hw">Tor Fiscale</span>, in the Appia Antica Archaeological Park in Rome: the area historically known as the <span class="hw">Campo Barbarico</span>. The goal was to support the conservation of this built heritage with a digital <span class="hl">HBIM</span> (Heritage Building Information Modelling) reconstruction that faithfully reproduces the different construction phases — a possible base for future restoration or research.</p>
+
+<div class="kpi-row">
+<div class="kpi"><div class="n">28.7 m</div><div class="l">Tower height</div></div>
+<div class="kpi"><div class="n">90°</div><div class="l">Aqueducts crossing</div></div>
+<div class="kpi"><div class="n">6</div><div class="l">Stratigraphic units</div></div>
+<div class="kpi"><div class="n">4</div><div class="l">Interoperating software</div></div>
+</div>
+
+<!-- ================= PART 1 ================= -->
+<div class="partband"><span class="pi">🏰</span><span class="pt">The Site & its History</span><span class="pl">Part 1 — Context</span></div>
+
+<h2>A medieval tower on Roman aqueducts</h2>
+<p>Tor Fiscale is a square-plan medieval tower, among the best preserved of the Roman countryside, standing at the 4th mile of the ancient Via Latina. First documented in 1277, it took its current name in the 17th century from Filippo Foppi, a papal <em>fiscale</em> (treasurer). Rising <span class="hw">28.7 m</span>, it was accessed from the first floor — a clue to a defensive role — and its rooftop terrace, with a narrow 50 cm circular opening protected by a sentry box, confirms its use as a <span class="hl">watchtower</span>.</p>
+<p>What makes it exceptional is the presence, beneath and around it, of the arches of two Roman aqueducts that cross twice: here the <span class="hw">Claudio</span> bends 90°, which is why the tower is thought to have served as a <span class="hl">castellum aquae</span> — a water-regulating node controlling flow and pressure.</p>
+
+<figure><img src="img/tor-torre-mesh.jpg" alt="Tor Fiscale — 3D textured model" style="max-width:420px;margin:0 auto"><figcaption>Tor Fiscale — the medieval tower rising above the surviving aqueduct arches, in the photogrammetric 3D model.</figcaption></figure>
+
+<h2>Two aqueducts, two eras</h2>
+<p>The two structures belong to different centuries and were built with different techniques — the key to reading the site's stratigraphy.</p>
+<div class="strat">
+<div class="row"><div class="sw" style="background:#8fbf6f"></div><div><div class="rt">Acqua Marcia–Tepula–Giulia — II c. BC</div><div class="rd">The oldest: three superimposed channels (Marcia 144 BC at the base, Tepula 125 BC, Giulia 33 BC). Peperino blocks, ~2.5 m wide with a 60 cm channel.</div></div></div>
+<div class="row"><div class="sw" style="background:#e88b6a"></div><div><div class="rt">Acquedotto Claudio–Anio Novus — I c. AD</div><div class="rd">Built 38–52 AD. The Claudia (52 AD) acts as the structural base for the Anio Novus channel (47 AD) above it — roughly-hewn <em>opus quadratum</em> in grey peperino. The tallest arches of its route (up to 28 m) are here.</div></div></div>
+</div>
+<div class="two"><figure style="margin:0"><img src="img/tor-facciata-nord-new.jpg" alt="North façade — opus quadratum and brick courses"><figcaption>North side: the Roman <em>opus quadratum</em> in grey peperino, interrupted by brick levelling courses, under the medieval tufo tower.</figcaption></figure><figure style="margin:0"><img src="img/tor-reticolato-sud-new.jpg" alt="South façade — opus reticulatum"><figcaption>South side: the Hadrianic <em>opus reticulatum</em> with brick arches, lining the older aqueduct wall.</figcaption></figure></div>
+
+<!-- ================= PART 2 ================= -->
+<div class="partband"><span class="pi">🛰️</span><span class="pt">Survey & 3D Capture</span><span class="pl">Part 2 — Scan</span></div>
+
+<h2>The survey campaign</h2>
+<p>Fieldwork took place on <span class="hw">18 May 2023</span>. A local geodetic network with checkerboard targets georeferenced every acquisition. The detailed survey combined three complementary methods:</p>
+<div class="strat">
+<div class="row"><div class="sw" style="background:#0d9488"></div><div><div class="rt">Terrestrial laser scanning (TLS)</div><div class="rd">FARO Focus 3D X 130 HDR — the backbone of the survey, generating a dense, millimetric point cloud of the tower and aqueducts.</div></div></div>
+<div class="row"><div class="sw" style="background:#2bb0e0"></div><div><div class="rt">UAV photogrammetry</div><div class="rd">A DJI Mavic Mini 2 reached ~30 m to capture the tower top and other areas unreachable from the ground.</div></div></div>
+<div class="row"><div class="sw" style="background:#e8820a"></div><div><div class="rt">Terrestrial photogrammetry</div><div class="rd">Canon EOS-1D Mark IV and Nikon D700, variable focal lengths — for texture, orthophotos and areas the laser could not reach.</div></div></div>
+</div>
+<div class="two"><figure style="margin:0"><img src="img/tor-faro-arco.jpg" alt="FARO Focus laser scanner at the tower base"><figcaption>The FARO Focus 3D X 130 scanning the tower base, with a checkerboard target on the masonry.</figcaption></figure><figure style="margin:0;display:flex;flex-direction:column"><img src="img/tor-leica.jpg" alt="Leica total station in its case" style="margin:auto"><figcaption>The Leica total station used to build the georeferenced control network.</figcaption></figure></div><figure><img src="img/tor-faro-path.jpg" alt="Laser scanner along the aqueduct"><figcaption>Scanning along the aqueduct front — the geodetic network (spheres and targets) tied every scan into a single reference system.</figcaption></figure>
+
+<h2>From points to a textured mesh</h2>
+<p>The TLS point cloud was processed in Autodesk ReCap Pro, the photogrammetric data in Agisoft Metashape. The cloud carries not only geometry but also height and intensity information — a rich picture of the as-found state of the monument.</p>
+<div class="two"><figure style="margin:0"><img src="img/tor-nuvola-colore.jpg" alt="Point cloud colour-mapped by height"><figcaption>Point cloud colour-mapped by elevation — purple at the top of the tower down to warm tones at ground level.</figcaption></figure><figure style="margin:0"><img src="img/tor-nuvola-grigia.jpg" alt="Point cloud, intensity greyscale"><figcaption>The same cloud in intensity greyscale, showing the density of the laser capture.</figcaption></figure></div>
+<p>From the photogrammetric images, a <span class="hl">textured mesh</span> and georeferenced <span class="hl">orthophotos</span> were generated — the realistic surface model later used to trace precise profiles.</p>
+<div class="two">
+<figure style="margin:0"><img src="img/tor-mesh-new.jpg" alt="Textured mesh"><figcaption>Textured mesh of the tower and site from photogrammetry.</figcaption></figure>
+<figure style="margin:0"><img src="img/tor-ortofoto-new.jpg" alt="Orthophoto"><figcaption>Georeferenced orthophoto from UAV imagery — the aqueduct arms and the tower crossing from above.</figcaption></figure>
+</div>
+
+<!-- ================= PART 3 ================= -->
+<div class="partband"><span class="pi">🧩</span><span class="pt">Scan-to-HBIM & Interoperability</span><span class="pl">Part 3 — Model</span></div>
+
+<h2>Why interoperability was essential</h2>
+<p>Historic structures resist standard BIM families: their geometry is irregular, degraded, and unique. A single tool cannot build an accurate parametric model from a point cloud, so the workflow chained several programs, each exchanging data without geometric loss:</p>
+<div class="note">Point cloud (ReCap / Metashape) → 2D drawings & NURBS surfaces (AutoCAD + Rhinoceros, DWG) → parametric walls in Revit via the "wall by face" command (GoG 6 extrusion, GoG 8 voids) → HBIM objects with embedded data (RVT / IFC / Excel).</div>
+<p>Using surfaces derived from the textured mesh guaranteed that the extruded walls kept the real, irregular shapes of the ruin instead of approximations. Voids — such as the aqueduct <em>speco</em> (water channel) — were cut by solid subtraction, raising the level of detail.</p>
+
+<div class="two">
+<figure style="margin:0"><img src="img/tor-us-model.jpg" alt="Parametric HBIM coloured by stratigraphic unit"><figcaption>The parametric HBIM model coloured by stratigraphic unit: medieval tufo tower (green), Claudio channel in <em>opus quadratum</em> (light blue), Marcia walls (olive), Hadrianic brickwork (blue) and <em>opus reticulatum</em> (red), with the detailed section at the crossing.</figcaption></figure>
+<figure style="margin:0"><img src="img/tor-reticolato-sud.jpg" alt="South facade with reticulate masonry"><figcaption>South façade: the Hadrianic <em>opus reticulatum</em> and brick arcades below the medieval tufo tower.</figcaption></figure>
+</div>
+
+<!-- ================= PART 4 ================= -->
+<div class="partband"><span class="pi">🧱</span><span class="pt">Stratigraphic Units & Phases</span><span class="pl">Part 4 — Interpretation</span></div>
+
+<h2>Reading the construction history</h2>
+<p>Following the "Archaeology of Architecture" approach, the model was split into <span class="hw">six stratigraphic units (US)</span>, each modelled as a separate parametric wall and distinguished by material and technique. This made it possible to assign each element its own properties and to infer the chronological sequence of construction and restoration.</p>
+
+
+
+
+
+<h2>A parametric, queryable model</h2>
+<p>In Revit, each stratigraphic-unit object carries an "Identity Data" record: a linked orthomosaic image, its <span class="hl">epoch</span>, a unique code (first letter = structure: T, C, M, A; number = US 1–6; a letter for orientation), the <span class="hl">construction technique</span>, the stratigraphic unit, and the construction phase. These data export to Excel, forming the base of a true database that can later host diagnostic surveys.</p>
+<p>The volumetric split lets the model <span class="hw">tell its own story</span>: the Marcia was built first (it is overridden by both tower and Claudio); the Claudio sits at the tower's base, so it predates the tower and the Anio Novus above it; the Hadrianic reticulate work on the south façade postdates both aqueducts; and the regular tufo courses date the tower to the late 12th–13th c.</p>
+
+<h3>Stratigraphic units legend</h3><div class="strat">
+<div class="row"><div class="sw" style="background:#b7e07f"></div><div><div class="rt">US 1 — Medieval tower (tufo)</div><div class="rd">End of 12th–13th c. Regular courses of tufo blocks — the tower itself.</div></div></div>
+<div class="row"><div class="sw" style="background:#bfe0f2"></div><div><div class="rt">US 2 — Opus quadratum (grey peperino)</div><div class="rd">I c. AD. The channel of the Claudio–Anio Novus aqueduct.</div></div></div>
+<div class="row"><div class="sw" style="background:#7f9e78"></div><div><div class="rt">US 3 — Acqua Marcia (peperino)</div><div class="rd">II c. BC. Walls of the Marcia–Tepula–Giulia — the oldest structure.</div></div></div>
+<div class="row"><div class="sw" style="background:#5b5bd6"></div><div><div class="rt">US 4 — Hadrianic brickwork (laterizio)</div><div class="rd">Hadrianic-era brick arches lining the opus quadratum from within.</div></div></div>
+<div class="row"><div class="sw" style="background:#f0776a"></div><div><div class="rt">US 5 — Hadrianic opus reticulatum</div><div class="rd">Reticulate masonry restoration, strengthening and sealing the structure.</div></div></div>
+<div class="row"><div class="sw" style="background:#f2c48a"></div><div><div class="rt">US 6 — Modern restoration (travertine)</div><div class="rd">Later repairs, mostly in travertine, where looting and decay had taken their toll.</div></div></div>
+</div>
+<div class="two"><figure style="margin:0"><img src="img/tor-fasi-1.jpg" alt="Construction phases, view 1"><figcaption>Construction phases exploded — the two aqueducts (olive &amp; light blue), the Hadrianic reinforcements (blue/red) and the medieval tower (green).</figcaption></figure><figure style="margin:0"><img src="img/tor-fasi-2.jpg" alt="Construction phases, view 2"><figcaption>The same decomposition from the opposite side, exposing the brick-and-reticulate restoration lining the channel.</figcaption></figure></div>
+
+<h2>From model to documented objects</h2><p>Each stratigraphic unit becomes a self-describing HBIM object. Two worked examples show the pattern — the parametric geometry on one side, the real masonry it reproduces, and the <span class="hl">Identity Data</span> record that makes the model queryable.</p><div class="outcard"><div class="oct">Example 1 — The Claudio–Anio Novus channel (US 2)</div><div class="ocs">From a stratigraphic unit in the model to a fully documented HBIM object: the parametric wall, its real masonry, and the embedded identity record.</div><div class="outgrid"><figure class="big"><img src="img/tor-out-claudio-3d.jpg" alt="Claudio channel — parametric wall in Revit"><figcaption>The modelled wall isolated in Revit.</figcaption></figure><figure><img src="img/tor-out-claudio-detail.jpg" alt="Claudio aqueduct masonry"><figcaption>The real aqueduct masonry it reproduces.</figcaption></figure><figure class="param"><img src="img/tor-out-claudio-param.jpg" alt="Identity data for the Claudio unit"><figcaption>Identity data: epoch, object code, technique, stratigraphic unit, phase.</figcaption></figure></div></div><div class="outcard"><div class="oct">Example 2 — The west façade of the tower (US 1)</div><div class="ocs">The same workflow applied to the medieval tufo tower: parametric geometry, the physical wall, and its queryable parameters.</div><div class="outgrid"><figure class="big"><img src="img/tor-out-ovest-3d.jpg" alt="West façade — parametric wall in Revit"><figcaption>The west-façade wall isolated in Revit.</figcaption></figure><figure><img src="img/tor-out-ovest-detail.jpg" alt="West façade masonry"><figcaption>The tufo masonry of the tower.</figcaption></figure><figure class="param"><img src="img/tor-out-ovest-param.jpg" alt="Identity data for the west façade unit"><figcaption>Identity data for the medieval tower (US 1, Tufo).</figcaption></figure></div></div><h2>What the HBIM delivers</h2>
+<p>The model is designed as a shared, extensible tool — a "magnet" that attracts documents, hypotheses, geometric matrices and mensiochronological analyses:</p>
+<ul style="margin:0 0 24px 20px;color:var(--t);font-size:16px;line-height:1.9">
+<li>Recognises and defines stratigraphic units through the Archaeology of Architecture, giving volumetric body to the readable masonry layers;</li>
+<li>Enables synchronic and diachronic analysis — comparing forms, materials and techniques across phases and restorations;</li>
+<li>Serves as a base for future study of other aqueduct stretches, available to researchers, authorities and professionals;</li>
+<li>Opens toward virtual/augmented reality for a dynamic museum experience — and could even support a project for a visitor lift inside the tower.</li>
+</ul>
+
+<div class="note">Future developments: pairing the BIM/laser workflow with <span class="hl">NURBS</span> surfaces for even higher geometric reliability and lighter models, and extending the HBIM into virtual reality to amplify public awareness of this heritage.</div>
+
+<footer>Built and designed by <span style="color:var(--a)">Ilaria Compagnoni</span>. All rights reserved © 2026</footer>
+</div>
+</body>
+</html>
